@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Back } from "./components/Back.js";
 import { Favorites } from "./components/Favorites.js";
 import { Header } from "./components/Header.js";
-import { Recipe } from "./components/Recipe.js";
+import { Random } from "./components/Random.js";
 import getRandomRecipe from './fetch.js'
 
 const App = () => {
@@ -9,18 +10,16 @@ const App = () => {
   // const api_id = `https://www.themealdb.com/api/json/v1/1/lookup.php?i='+id`
 
   const [meal, setMeal] = useState([])
-
   useEffect(() => {
     getRandomRecipe(setMeal)
   }, [])
 
   return (
     <>
+      <Back />
       <Header />
-      <Recipe title={meal.strMeal} img={meal.strMealThumb} />
-      <div className="hero">
-        <Favorites />
-      </div>
+      {/* <Favorites /> */}
+      <Random meal={meal} />
     </>
   );
 }

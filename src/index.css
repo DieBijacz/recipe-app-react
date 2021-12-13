@@ -1,54 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 *, 
 *::before,
 *::after {
+  font-family: 'Lato', sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+:root {
+  --main-color: #ffd4a3;
+  --main-dark-color: #e6b57e;
+  --linear: linear-gradient(180deg, rgba(255,212,163,1) 0%, rgba(255,255,255,1) 100%);
+  --radial: radial-gradient(circle, rgba(255,212,163,1) 0%, rgba(255,255,255,1) 100%);
+}
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.btn {
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  margin: 5px;
+  background-color: white;
+  cursor: pointer;
 }
-.hero {
-  background-color: rgb(226, 226, 226);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 300px;
+/* =====================================HEADER===================================== */
+.back {
+  left: 0;
+  right: 0;
+  z-index: -2;
+  height: 400px;
+  background: var(--linear);
+  position: absolute;
 }
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 600px;
-  background-color: blue;
-}
-/* ====================================HEADER==================================== */
 header {
-  padding: 20px;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: antiquewhite;
-  margin: 10px;
+  padding: 20px;
 }
-/* ====================================HEADER==================================== */
+.search-bar {
+  width: 250px;
+  background-color: white;
+  padding: 10px;
+}
+.search-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+}
+
+/* =====================================HEADER===================================== */
 /* ====================================FAVORITES==================================== */
 .favorites{
-  background-color: red;
-  width: 400px;
-  min-height: 100px;
-  margin: 20px;
+  background-color: white;
+  box-shadow: 0 5px 5px var(--main-dark-color);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin: 10px;
+}
+.favorites ul {
+  display: flex;
+  gap: 20px;
+}
+/* ====================================FAVORITES==================================== */
+/* ===================================RANDOM MEAL=================================== */
+.random-meal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
-/* ====================================FAVORITES==================================== */
+/* ===================================RANDOM MEAL=================================== */
+/* ====================================MEAL CARD==================================== */
+.meal-card {
+  max-width: 1000px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px #333;
+  background: white;
+}
+.meal {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.meal img {
+  max-height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.meal-body {
+  position: relative;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 10px;
+}
+.meal-body button {
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+}
+
+/* ====================================MEAL CARD==================================== */
+/* ======================================MEDIA====================================== */
+@media (max-width: 600px) {
+  .meal {
+    display: flex;
+    flex-direction: column;
+  }
+  .meal img {
+  max-height: 300px;
+    width: 100%;
+  }
+
+}
