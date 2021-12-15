@@ -4,7 +4,7 @@ import { Meal } from './Meal.js'
 export const Random = ({ meal }) => {
     return (
         <div className="random-meal">
-            <Meal title={meal.strMeal} img={meal.strMealThumb} strInstructions={meal.strInstructions} />
+            <Meal meal={meal} />
         </div>
     )
 }

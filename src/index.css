@@ -6,12 +6,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #333;
+  list-style: none;
+  text-decoration: none;
 }
 :root {
   --main-color: #ffd4a3;
   --main-dark-color: #e6b57e;
   --linear: linear-gradient(180deg, rgba(255,212,163,1) 0%, rgba(255,255,255,1) 100%);
   --radial: radial-gradient(circle, rgba(255,212,163,1) 0%, rgba(255,255,255,1) 100%);
+  --sidebar: linear-gradient(270deg, rgba(255,212,163,0) 0%, rgba(255,212,163,1) 13%);
 }
 body {
   position: relative;
@@ -24,7 +28,7 @@ body {
   background-color: white;
   cursor: pointer;
 }
-/* =====================================HEADER===================================== */
+/* =====================================NAVBAR===================================== */
 .back {
   left: 0;
   right: 0;
@@ -33,12 +37,45 @@ body {
   background: var(--linear);
   position: absolute;
 }
-header {
-  width: 100vw;
+.navbar {
+  max-width: 1200px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 0 20px;
+}
+.menu-icon {
+  font-size: 1.6rem;
+}
+.navbar-toggle {
+  margin: 2rem;
+}
+.nav-menu {
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: start;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: .1s;
+}
+.nav-menu.active {
+  left: 0;
+  transition: 250ms;
+}
+.nav-item {
+  font-size: 1.1rem;
+  justify-content: start;
+  height: 50px;
+  padding: 12px;
+  margin-left: 1rem;
+  border-radius: 10px;
+}
+.nav-item:hover {
+  background-color: var(--main-dark-color);
+  color: white;
 }
 .search-bar {
   width: 250px;
@@ -51,7 +88,7 @@ header {
   font-size: 1.2rem;
 }
 
-/* =====================================HEADER===================================== */
+/* =====================================NAVBAR===================================== */
 /* ====================================FAVORITES==================================== */
 .favorites{
   background-color: white;
@@ -75,7 +112,6 @@ header {
   justify-content: center;
   align-items: center;
 }
-
 
 /* ===================================RANDOM MEAL=================================== */
 /* ====================================MEAL CARD==================================== */
@@ -103,9 +139,12 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5px 10px;
+  padding: 0 20px;
 }
-.meal-body button {
+.meal-body h4 {
+  margin-bottom: 10px;
+}
+.meal-body .meal-delete {
   position: absolute;
   right: 20px;
   bottom: 0;

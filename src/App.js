@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Back } from "./components/Back.js";
-import { Favorites } from "./components/Favorites.js";
-import { Header } from "./components/Header.js";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+// import { Favorites } from "./components/pages/Favorites";
 import { Random } from "./components/Random.js";
+import Navbar from "./components/Navbar/Navbar.js";
 import getRandomRecipe from './fetch.js'
 
 const App = () => {
@@ -16,10 +17,14 @@ const App = () => {
 
   return (
     <>
-      <Back />
-      <Header />
-      {/* <Favorites /> */}
-      <Random meal={meal} />
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' />
+        </Routes>
+        {/* <Favorites /> */}
+        <Random meal={meal} />
+      </Router>
     </>
   );
 }
