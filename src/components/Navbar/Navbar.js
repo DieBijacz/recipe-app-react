@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import * as FAicon from 'react-icons/fa'
-import * as AIicon from 'react-icons/ai'
+import * as GRicon from 'react-icons/gr'
 import { sidebarData } from './sidebarData.js'
 import { Link } from 'react-router-dom'
 import getRandomRecipe from '../../fetch.js'
@@ -35,8 +35,8 @@ function Navbar() {
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className='nav-menu-list' onClick={showSidebar}>
                     <li className='navbar-toggle'>
-                        <Link to='#' className='menu-icon'>
-                            <AIicon.AiOutlineClose />
+                        <Link to='#' className='menuclose-icon'>
+                            <GRicon.GrFormClose />
                         </Link>
                     </li>
                     {sidebarData.map((item, index) => {

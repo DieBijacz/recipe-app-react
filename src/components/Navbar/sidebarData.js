@@ -1,5 +1,6 @@
 import React from 'react'
 import * as GRicon from 'react-icons/gr'
+import * as BIicon from 'react-icons/bi'
 
 export const sidebarData = [
     {
@@ -12,6 +13,12 @@ export const sidebarData = [
         title: 'Favorites',
         path: '/favorites',
         icon: <GRicon.GrFavorite />,
+        name: 'nav-item'
+    },
+    {
+        title: 'World Wide',
+        path: '/worldwide',
+        icon: <BIicon.BiWorld />,
         name: 'nav-item'
     },
     {

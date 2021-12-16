@@ -6,7 +6,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #333;
   list-style: none;
   text-decoration: none;
 }
@@ -28,6 +27,9 @@ body {
   background-color: white;
   cursor: pointer;
 }
+a {
+  color: #333;
+}
 /* =====================================NAVBAR===================================== */
 .back {
   left: 0;
@@ -46,36 +48,34 @@ body {
   padding: 0 20px;
 }
 .menu-icon {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
-.navbar-toggle {
-  margin: 2rem;
+.menuclose-icon {
+  font-size: 2rem;
+}
+.nav-menu-list {
+  margin: 2rem 1rem;
 }
 .nav-menu {
-  width: 250px;
+  width: 200px;
   height: 100vh;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   position: fixed;
   top: 0;
   left: -100%;
-  transition: .1s;
+  background-color: var(--main-color);
+  transition: .5s;
+  font-size: 1.2rem;
 }
 .nav-menu.active {
   left: 0;
-  transition: 250ms;
+  transition: .5s;
 }
 .nav-item {
-  font-size: 1.1rem;
   justify-content: start;
-  height: 50px;
   padding: 12px;
-  margin-left: 1rem;
-  border-radius: 10px;
-}
-.nav-item:hover {
-  background-color: var(--main-dark-color);
-  color: white;
+  margin-top: 1rem;
 }
 .search-bar {
   width: 250px;
@@ -149,7 +149,19 @@ body {
   right: 20px;
   bottom: 0;
 }
+/* RATING */
+.rating {
+  display: flex;
+}
+input[type='radio'] {
+  display: none;
+}
+.star {
+  cursor: pointer;
+  transition: color 200ms;
+}
 
+/* RATING */
 /* ====================================MEAL CARD==================================== */
 /* ======================================MEDIA====================================== */
 @media (max-width: 600px) {
